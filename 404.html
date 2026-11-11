@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>12 Axes</title>
+    <script>
+      // Fallback do SPA no GitHub Pages: qualquer caminho sem arquivo próprio cai aqui.
+      // Redireciona para a raiz do site com o caminho em "?/...", que o index.html
+      // restaura na URL real (ver o script no <head> do index.html).
+      //
+      // Site de projeto (usuario.github.io/repo): 1ª tentativa mantém o 1º segmento como
+      // base. Site de usuário (usuario.github.io): esse palpite cai no 404 de novo — aí,
+      // com "?/" já na busca, a base é a raiz e todo o caminho vai para o parâmetro.
+      (function () {
+        var l = window.location;
+        var segments = l.pathname
+          .slice(1)
+          .split('/')
+          .filter(function (seg) {
+            return seg.length > 0;
+          });
+        if (l.search.charAt(1) === '/') {
+          // 2ª passada: o 1º segmento era caminho, não base — a base é a raiz.
+          var tail = segments.join('/') + '/' + l.search.slice(2);
+          l.replace(l.protocol + '//' + l.host + '/?/' + tail + l.hash);
+          return;
+        }
+        var base = '/' + (segments[0] || '') + '/';
+        var rest = segments.slice(1).join('/');
+        var query = l.search ? l.search.slice(1) : '';
+        var marker = '?/' + rest.replace(/&/g, '~and~') + (query ? '&' + query.replace(/&/g, '~and~') : '');
+        l.replace(l.protocol + '//' + l.host + base + marker + l.hash);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

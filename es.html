@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // GitHub Pages: o 404.html manda qualquer rota para a raiz com o caminho em "?/...".
+      // Aqui ele volta para a URL real — e o diretório desta carga (sempre a raiz do site)
+      // fica em __BASE_PATH, a base de todos os caminhos relativos do app.
+      (function () {
+        var l = window.location;
+        window.__BASE_PATH = l.pathname.replace(/[^/]*$/, '');
+        if (l.search.charAt(1) === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, '', window.__BASE_PATH.replace(/\/$/, '') + decoded + l.hash);
+        }
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#102E24" />
+
+    <!-- Primary SEO -->
+    <title>12 Axes — Test político gratis, quiz y brújula política en 12 ejes</title>
+    <meta
+      name="description"
+      content="El test político gratis, rápido y preciso de 12 Axes. Descubre tu ideología, tu país y tu figura política compatibles en 12 ejes, con una brújula política."
+    />
+    <meta
+      name="keywords"
+      content="test político, test político gratis, test de ideología política, test de ideología, ideología política, descubre tu ideología, descubre tu ideología compatible, descubre tu país compatible, descubre tu figura política compatible, espectro político, brújula política, coordenadas políticas, test de la brújula política, test de brújula política, 12 ejes, test político de 12 ejes, 12 axes, 12axes, quiz político, izquierda, derecha, centro, liberalismo, conservadurismo, progresismo, libertarismo, socialismo, capitalismo"
+    />
+    <meta name="author" content="12 Axes" />
+    <meta name="copyright" content="© 2026 12 Axes. Todos los derechos reservados" />
+    <meta name="application-name" content="12 Axes" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="language" content="Spanish" />
+    <link rel="canonical" href="https://12axes.vercel.app/es" />
+    <link rel="alternate" hreflang="pt-BR" href="https://12axes.vercel.app/" />
+    <link rel="alternate" hreflang="en" href="https://12axes.vercel.app/en" />
+    <link rel="alternate" hreflang="es" href="https://12axes.vercel.app/es" />
+    <link rel="alternate" hreflang="x-default" href="https://12axes.vercel.app/en" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" sizes="any" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="12 Axes" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content="https://12axes.vercel.app/es" />
+    <meta property="og:title" content="12 Axes — Test político gratis, quiz y brújula política en 12 ejes" />
+    <meta
+      property="og:description"
+      content="Un quiz político completo y gratis: descubre tu ideología política, tu país y tu figura política compatibles en 12 ejes, con brújula política y espectro completo."
+    />
+    <meta property="og:image" content="https://12axes.vercel.app/logo.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Logo de 12 Axes — un test político de 12 ejes" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="12 Axes — Test político gratis, quiz y brújula política en 12 ejes" />
+    <meta
+      name="twitter:description"
+      content="Un test político gratis y rápido: descubre tu ideología, tu país y tu figura política compatibles en 12 ejes, con brújula política."
+    />
+    <meta name="twitter:image" content="https://12axes.vercel.app/logo.png" />
+
+    <style>
+      :root{color-scheme:light;--green-50:#E9EFEC;--green-400:#3E5A4F;--green-500:#102E24;--green-700:#09241B;--red-50:#F7E7E8;--red-500:#880912;--red-700:#56050B;--ink-950:#101010;--ink-900:#1A1A18;--ink-700:#5B5A55;--ink-400:#9C988C;--ink-100:#E2DDCF;--canvas:#F4F1E8;--paper:#F4F1E8;--text-muted:var(--ink-700);--text-strong:var(--ink-950);--line:#E2DDCF;--line-strong:rgba(16,16,16,.16);--accent:var(--green-500);--accent-deep:var(--green-700);--accent-soft:var(--green-50);--critical-deep:var(--red-700);--critical-soft:var(--red-50);--grad-brand:linear-gradient(120deg,var(--green-700) 0%,var(--green-500) 50%,var(--green-400) 100%);--grad-mesh:radial-gradient(42% 38% at 8% 2%,rgba(16,46,36,.06),transparent 70%),radial-gradient(40% 36% at 96% 0%,rgba(136,9,18,.04),transparent 72%),radial-gradient(52% 46% at 90% 98%,rgba(16,46,36,.04),transparent 74%);--font-display:"Sora",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--font-body:"Poppins",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--radius-md:10px;--radius-lg:14px;--radius-xl:18px;--radius-pill:999px;--shadow-xs:0 1px 2px rgba(16,16,16,.05);--shadow-sm:0 3px 10px rgba(16,16,16,.06);--shadow-md:0 14px 30px -18px rgba(16,16,16,.22)}
+      *{box-sizing:border-box}html,body,#root{min-height:100dvh}body{margin:0;background:var(--canvas);color:var(--ink-900);font-family:var(--font-body);line-height:1.55;overflow-x:clip}#root{position:relative;z-index:1}
+    </style>
+
+    <!-- Structured data: WebApplication + FAQ + WebSite -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"12 Axes","alternateName":["Quiz político 12 Axes","Test de ideología 12 Axes","Test político 12 Axes","Brújula política 12 Axes","Test 12 Axes"],"url":"https://12axes.vercel.app/es","description":"Un test político y de ideología gratis, rápido y completo que mapea tu posición en 12 ejes y muestra tu ideología, tu país y tu figura política compatibles, con brújula política y espectro.","applicationCategory":"EducationApplication","operatingSystem":"Web","inLanguage":"es","isAccessibleForFree":true,"copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"12 Axes","url":"https://12axes.vercel.app/"},"license":"https://github.com/RomanCypherpunk/12axes/blob/main/LICENSE","image":"https://12axes.vercel.app/logo.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"test político, test político gratis, test de ideología política, test de ideología, ideología política, descubre tu ideología, descubre tu ideología compatible, descubre tu país compatible, descubre tu figura política compatible, espectro político, brújula política, coordenadas políticas, test de la brújula política, test de brújula política, 12 ejes, test político de 12 ejes, 12 axes, 12axes, quiz político, izquierda, derecha, centro, liberalismo, conservadurismo, progresismo, libertarismo, socialismo, capitalismo","featureList":["Test político gratis con 36, 60 o 240 preguntas","Resultado en 12 ejes políticos","Ideología política compatible","País y régimen histórico compatibles","Figura política compatible","Brújula política con socialismo × capitalismo y autoritario × libertario","Anónimo, sin registro"],"about":["Estructura política","Representación democrática","Elecciones","Monarquía","Libertades civiles","Inmigración","Diplomacia","Intervención","Política económica","Capitalismo","Socialismo","Libre mercado","Comercio internacional","Religión en la política","Moral","Tecnología","Liberalismo","Conservadurismo","Progresismo","Libertarismo"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿El test es confiable?","acceptedAnswer":{"@type":"Answer","text":"El test político de 12 Axes es confiable como herramienta para leer y comparar posiciones políticas. Usa preguntas repartidas en 12 ejes para reducir el sesgo de un solo tema, pero no sustituye el estudio, el debate ni el análisis académico."}},{"@type":"Question","name":"¿Cuánto tarda?","acceptedAnswer":{"@type":"Answer","text":"La versión corta tarda unos 5 minutos. La versión completa, cerca de 9 minutos. La versión extrema, con 240 preguntas, puede tardar unos 30 minutos."}},{"@type":"Question","name":"¿Puedo repetirlo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Puedes repetir el quiz político las veces que quieras, incluso eligiendo otra profundidad para comparar si tu resultado cambia."}},{"@type":"Question","name":"¿Hay una respuesta correcta?","acceptedAnswer":{"@type":"Answer","text":"No hay respuesta correcta. El test de ideología mide preferencias sobre democracia, monarquía, federalismo, inmigración, religión en la política, política económica, comercio internacional, liberalismo, conservadurismo, progresismo y otros temas."}},{"@type":"Question","name":"¿Cómo calcula el algoritmo?","acceptedAnswer":{"@type":"Answer","text":"Cada respuesta suma puntos a un polo específico. El algoritmo calcula porcentajes por eje, compara tu vector ideológico con los perfiles de corrientes políticas, países y personalidades, y devuelve las mayores compatibilidades."}},{"@type":"Question","name":"¿El resultado cambia?","acceptedAnswer":{"@type":"Answer","text":"Puede cambiar si tus opiniones cambian, si respondes con más matices o si haces una versión más larga. La versión extrema tiende a reducir las variaciones al usar más preguntas."}},{"@type":"Question","name":"¿El test es científico?","acceptedAnswer":{"@type":"Answer","text":"12 Axes no es un instrumento científico validado clínicamente. Es un test político educativo, inspirado en modelos de espectro político y quizzes de ideología, útil para la reflexión y la comparación."}},{"@type":"Question","name":"¿Puedo compartirlo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Al terminar, puedes compartir tu resultado para conversar con otras personas sobre ideología política, espectro político, izquierda, derecha, centro y los 12 ejes."}},{"@type":"Question","name":"¿El test recopila datos?","acceptedAnswer":{"@type":"Answer","text":"El test es anónimo y no requiere registro. Las respuestas se usan para calcular el resultado en el momento del quiz, sin pedir tu nombre, correo electrónico ni identificación personal."}},{"@type":"Question","name":"¿Puedo hacerlo en el celular?","acceptedAnswer":{"@type":"Answer","text":"Sí. La interfaz fue diseñada para celular y computadora, así que puedes hacer el test político en el navegador de tu smartphone."}},{"@type":"Question","name":"¿Qué es 12 Axes?","acceptedAnswer":{"@type":"Answer","text":"12 Axes es un test político gratis que mide tu posición en 12 ejes (estructura del Estado, representación, libertades, inmigración, diplomacia, intervención, economía, control económico, comercio, religión, moral y tecnología) y muestra tu ideología política, tu país y tu figura política compatibles."}},{"@type":"Question","name":"¿12 Axes tiene brújula política?","acceptedAnswer":{"@type":"Answer","text":"Sí. Al final del resultado hay una brújula política de dos ejes, socialismo × capitalismo y autoritario × libertario, con una barra progresista × tradicionalista. Resume tus 12 ejes de forma visual, pero no sustituye el análisis completo."}},{"@type":"Question","name":"¿Cómo descubro mi ideología política compatible?","acceptedAnswer":{"@type":"Answer","text":"Haz el quiz político, con 36, 60 o 240 preguntas. El resultado muestra las ideologías más compatibles con tus respuestas, con el porcentaje de compatibilidad y la posición de cada una en los 12 ejes."}},{"@type":"Question","name":"¿Puedo saber qué país o figura política es compatible conmigo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Además de la ideología, el resultado compara tu perfil con países actuales, regímenes históricos y figuras políticas, y muestra los más compatibles y los más alejados de ti."}},{"@type":"Question","name":"¿Cuántas preguntas tiene el quiz político?","acceptedAnswer":{"@type":"Answer","text":"Hay tres versiones: rápida, con 36 preguntas, completa, con 60, y extrema, con 240. Todas cubren los mismos 12 ejes; cuantas más preguntas, más preciso suele ser el resultado."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"12 Axes","alternateName":["12 Eixos","12axes","12 Axes Political Test"],"url":"https://12axes.vercel.app/es","inLanguage":["es","pt-BR","en"]}</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JF63DF6BNM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JF63DF6BNM');
+    </script>
+    <script type="module" crossorigin src="./assets/index-CCoWq-1R.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D2Ah8-8Z.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" crossorigin href="./assets/index-D2Ah8-8Z.css"></noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

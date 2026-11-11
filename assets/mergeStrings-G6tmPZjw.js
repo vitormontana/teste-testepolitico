@@ -1,0 +1,1 @@
+const o=t=>typeof t=="object"&&t!==null&&!Array.isArray(t);function i(t,n){if(!o(t)||!o(n))return n===void 0?t:n;const r={...t};for(const[c,f]of Object.entries(n))r[c]=i(t[c],f);return r}export{i as mergeStrings};
